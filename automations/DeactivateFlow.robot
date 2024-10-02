@@ -26,7 +26,7 @@ Entering A Lead
     Picklist                  Salutation                  Ms.
     TypeText                  First Name                  ${firstname}
     TypeText                  Last Name                   ${lastname}
-    Picklist                  Lead Status                 Working
+    Picklist                  Lead Status                 Open
     TypeText                  Phone                       +12234567858449             First Name
     TypeText                  Company                     Growmore                    Last Name
     TypeText                  Title                       Manager                     Address Information

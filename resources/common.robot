@@ -37,6 +37,7 @@ Dynamic Login
     ${DYNAMIC_LOGIN}=           Get Variable Value          ${loginUrl}                 NoValuePassed
     IF                          '${DYNAMIC_LOGIN}' != 'NoValuePassed'
         Log To Console          In the dynamic login
+        GoTo                    ${DYNAMIC_LOGIN}
     ELSE
         Log To Console          In the static login
         Static Login

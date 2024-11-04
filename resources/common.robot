@@ -7,7 +7,7 @@ Library                         String
 *** Variables ***
 ${BROWSER}                      chrome
 ${home_url}                     ${dc_static_login_url}/lightning/page/home
-
+${data_cloud_setup_url}         ${dc_static_login_url}/lightning/setup/SetupOneHome/home?setupApp=audience360
 
 *** Keywords ***
 Setup Browser
@@ -47,3 +47,6 @@ Home
     Run Keyword If              ${login_status}             Dynamic Login
     ClickText                   Home
     VerifyTitle                 Home | Salesforce
+
+Data Cloud Setup
+    GoTo                        ${data_cloud_setup_url}

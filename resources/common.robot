@@ -36,6 +36,9 @@ Dynamic Login
     ${DYNAMIC_LOGIN}=           Get Variable Value          ${loginUrl}                 NoValuePassed
     IF                          '${DYNAMIC_LOGIN}' != 'NoValuePassed'
         GoTo                    ${DYNAMIC_LOGIN}
+        Set Global Variable     ${home_url}                 ${loginUrl}/lightning/page/home
+        Set Global Variable     ${data_cloud_setup_url}     ${loginUrl}/lightning/setup/SetupOneHome/home?setupApp=audience360
+        Set Global Variable     ${salesforce_setup_url}     ${loginUrl}/lightning/setup/SetupOneHome/home?setupApp=all
     ELSE
         Static Login
     END

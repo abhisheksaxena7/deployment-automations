@@ -60,7 +60,6 @@ Home
 
 Data Cloud Setup
     Home
-    Sleep                       5
     Log                         DC Setup URL: ${data_cloud_setup_url}
     GoTo                        ${data_cloud_setup_url}
     VerifyTitle                 Data Cloud Setup | Salesforce

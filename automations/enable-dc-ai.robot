@@ -1,5 +1,6 @@
 *** Settings ***
 Library                         QWeb
+Library                         Collections
 Resource                        ../resources/common.robot
 Suite Setup                     Setup Browser
 Suite Teardown                  End suite
@@ -10,6 +11,11 @@ Library                         FakerLibrary
 
 Verify Data Cloud is Setup
     Appstate                    Data Cloud Setup
+    ${current_url}=    GetUrl
+    Log    Current URL: ${current_url}
+    ${instance_url}=    Get Regexp Matches    ${current_url}    (https://.*\\.salesforce\\.com)
+    ${instance_url}=    Get From List    ${instance_url}    0
+    Log                 IU: ${instance_url}
     VerifyText                  Set Up Your Data Cloud Instance
     VerifyText                  Your Data Cloud instance is live and connected to your home org.
 

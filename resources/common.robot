@@ -27,7 +27,7 @@ Static Login
     [Documentation]             Login to Salesforce instance
     Set Library Search Order    QWeb                        QForce
     GoTo                        ${dc_static_login_url}
-    TypeText                    Username                    ${dc_username}                 delay=1
+    TypeText                    Username                    ${dc_username}              delay=1
     TypeText                    Password                    ${dc_password}
     ClickText                   Log In
 

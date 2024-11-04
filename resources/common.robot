@@ -50,9 +50,11 @@ Home
     VerifyTitle                 Home | Salesforce
 
 Data Cloud Setup
+    Home
     GoTo                        ${data_cloud_setup_url}
     VerifyTitle                 Data Cloud Setup | Salesforce
 
 Salesforce Setup
+    Home
     GoTo                        ${salesforce_setup_url}
     VerifyText                  Setup Home

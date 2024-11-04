@@ -1,10 +1,10 @@
 *** Settings ***
 Library                         QWeb
-Library                         Collections
 Resource                        ../resources/common.robot
 Suite Setup                     Setup Browser
 Suite Teardown                  End suite
 Library                         FakerLibrary
+Library                         Collections
 
 *** Test Cases ***
 

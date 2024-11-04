@@ -8,6 +8,7 @@ Library                         String
 ${BROWSER}                      chrome
 ${home_url}                     ${dc_static_login_url}/lightning/page/home
 ${data_cloud_setup_url}         ${dc_static_login_url}/lightning/setup/SetupOneHome/home?setupApp=audience360
+${salesforce_setup_url}         ${dc_static_login_url}/lightning/setup/SetupOneHome/home?setupApp=all
 
 *** Keywords ***
 Setup Browser
@@ -50,3 +51,6 @@ Home
 
 Data Cloud Setup
     GoTo                        ${data_cloud_setup_url}
+
+Salesforce Setup
+    GoTo                        ${salesforce_setup_url}

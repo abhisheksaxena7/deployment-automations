@@ -62,7 +62,7 @@ Data Cloud Setup
     Home
     Sleep                       5
     Log                         DC Setup URL: ${data_cloud_setup_url}
-    GoTo                        ${loginUrl}/lightning/setup/SetupOneHome/home?setupApp=audience360
+    GoTo                        ${data_cloud_setup_url}
     VerifyTitle                 Data Cloud Setup | Salesforce
 
 Salesforce Setup

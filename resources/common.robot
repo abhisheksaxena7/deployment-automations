@@ -2,6 +2,7 @@
 Library                         QWeb
 Library                         QForce
 Library                         String
+Library                         Collections
 
 
 *** Variables ***
@@ -35,10 +36,15 @@ Dynamic Login
     [Documentation]             Login to Salesforce instance
     ${DYNAMIC_LOGIN}=           Get Variable Value          ${loginUrl}                 NoValuePassed
     IF                          '${DYNAMIC_LOGIN}' != 'NoValuePassed'
-        Set Global Variable     ${home_url}                 ${loginUrl}/lightning/page/home
-        Set Global Variable     ${data_cloud_setup_url}     ${loginUrl}/lightning/setup/SetupOneHome/home?setupApp=audience360
-        Set Global Variable     ${salesforce_setup_url}     ${loginUrl}/lightning/setup/SetupOneHome/home?setupApp=all
         GoTo                    ${DYNAMIC_LOGIN}
+        ${current_url}=         GetUrl
+        Log                     Current URL: ${current_url}
+        ${instance_url}=        Get Regexp Matches          ${current_url}              (https://.*\\.force\\.com)
+        ${instance_url}=        Get From List               ${instance_url}             0
+        Log                     IU: ${instance_url}
+        Set Global Variable     ${home_url}                 ${instance_url}/lightning/page/home
+        Set Global Variable     ${data_cloud_setup_url}     ${instance_url}/lightning/setup/SetupOneHome/home?setupApp=audience360
+        Set Global Variable     ${salesforce_setup_url}     ${instance_url}/lightning/setup/SetupOneHome/home?setupApp=all
     ELSE
         Static Login
     END

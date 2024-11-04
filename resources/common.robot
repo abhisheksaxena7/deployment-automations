@@ -46,7 +46,7 @@ Dynamic Login
 Home
     [Documentation]             Navigate to homepage, login if needed
     Set Library Search Order    QWeb                        QForce
-    GoTo                        ${home_url}
+    GoTo                        ${data_cloud_setup_url}
     ${login_status} =           IsText                      To access this page, you have to log in to Salesforce.    2
     Run Keyword If              ${login_status}             Dynamic Login
     ClickText                   Home
@@ -56,7 +56,7 @@ Data Cloud Setup
     Home
     Sleep                       5
     Log                         DC Setup URL: ${data_cloud_setup_url}
-    GoTo                        ${data_cloud_setup_url}
+    GoTo                        ${loginUrl}/lightning/setup/SetupOneHome/home?setupApp=audience360
     VerifyTitle                 Data Cloud Setup | Salesforce
 
 Salesforce Setup

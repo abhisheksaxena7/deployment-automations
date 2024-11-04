@@ -51,6 +51,8 @@ Home
 
 Data Cloud Setup
     GoTo                        ${data_cloud_setup_url}
+    VerifyTitle                 Data Cloud Setup | Salesforce
 
 Salesforce Setup
     GoTo                        ${salesforce_setup_url}
+    VerifyText                  Setup Home

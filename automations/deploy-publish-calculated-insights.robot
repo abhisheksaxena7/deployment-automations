@@ -26,6 +26,8 @@ Deploy and Publish Calculated Insight
     ClickText       Save                        parent=LIGHTNING-BUTTON
     ClickText       Next
     ClickText       Enable
+    Sleep 10
+    RefreshPage
     ClickText       Show 5 more actions
     ClickText       Publish Now
 

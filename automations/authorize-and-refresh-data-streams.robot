@@ -42,23 +42,20 @@ Refresh Data Streams
     ClickText                  All Data Streams
     ClickText                  Reservation_
     ClickText                  Refresh Now
-    UseModal                   on
+    UseModal                   on                          //div[contains(@class, 'slds-modal__container')]
     ClickText                  Refresh Only New Files
-    Sleep                      5
-    ClickText                  Refresh Now                 anchor=Cancel
+    ClickElement               //button[contains(@class, 'slds-button_brand') and contains(., 'Refresh Now')]
+    VerifyNoText               Refresh Only New Files
     UseModal                   off
 
     #Refresh Guest Data Stream
     ClickText                  Data Streams
     ClickText                  Select a List View: Data Streams
     ClickText                  All Data Streams
-    #TypeText                  Search this list...         Guest\n
-    #ClickText                 Show Actions
-    #ClickText                 Refresh Now
-    #ClickText                 Refresh Now                 anchor=Cancel
-    #ClickText                 Guest_
-    #ClickText                 Refresh Now
-    #ClickText                 Refresh Only New Files
-    #ClickText                 Refresh Now                 anchor=Cancel
-
+    ClickText                  Guest_
+    ClickText                  Refresh Now
+    UseModal                   on                          //div[contains(@class, 'slds-modal__container')]
+    ClickText                  Refresh Only New Files
+    ClickElement               //button[contains(@class, 'slds-button_brand') and contains(., 'Refresh Now')]
+    UseModal                   off
 

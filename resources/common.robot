@@ -68,3 +68,16 @@ Salesforce Setup
     Home
     GoTo                        ${salesforce_setup_url}
     VerifyText                  Setup Home
+
+Refresh Data Stream
+    [Arguments]    ${stream_name}
+    ClickText                  Data Streams
+    ClickText                  Select a List View: Data Streams
+    ClickText                  All Data Streams
+    ClickText                  ${stream_name}
+    ClickText                  Refresh Now
+    UseModal                   on                          //div[contains(@class, 'slds-modal__container')]
+    ClickText                  Refresh Only New Files
+    ClickElement               //button[contains(@class, 'slds-button_brand') and contains(., 'Refresh Now')]
+    VerifyNoText               Refresh Only New Files
+    UseModal                   off

@@ -75,7 +75,7 @@ Refresh Data Stream
     ClickText                   Select a List View: Data Streams
     ClickText                   All Data Streams
     ClickText                   ${stream_name}
-    Sleep                       15
+    Sleep                       60
     RefreshPage
     ClickText                   Refresh Now
     IF                          '${stream_name}' != 'Contact_Home'

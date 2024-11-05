@@ -51,5 +51,7 @@ Create Data Stream
     ClickText                  Next
     ClickText                  Next
     ClickText                  Deploy
+    VerifyNoText               New Data Stream
+    UseModal                   off
     #Refresh Contacts Data Stream
     Refresh Data Stream        Contact_Home

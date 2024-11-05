@@ -43,7 +43,7 @@ Refresh Data Streams
     ClickText                  Reservation_
     ClickText                  Refresh Now
     UseModal                   on
-    ClickText                  Refresh Only New Files    partial_match=on
+    ClickText                  Refresh Only New Files
     Sleep                      5
     ClickText                  Refresh Now                 anchor=Cancel
     UseModal                   off

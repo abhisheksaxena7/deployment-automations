@@ -32,30 +32,24 @@ Establish and verify AWS connection
 
 
 Refresh Data Streams
-    #Enable Einstein
     Appstate                   Data Cloud Setup
     LaunchApp                  Data Cloud
 
-    #Refresh Reservation Data Stream
-    ClickText                  Data Streams
-    ClickText                  Select a List View: Data Streams
-    ClickText                  All Data Streams
-    ClickText                  Reservation_
-    ClickText                  Refresh Now
-    UseModal                   on                          //div[contains(@class, 'slds-modal__container')]
-    ClickText                  Refresh Only New Files
-    ClickElement               //button[contains(@class, 'slds-button_brand') and contains(., 'Refresh Now')]
-    VerifyNoText               Refresh Only New Files
-    UseModal                   off
+    #Refresh Reservation and Guest Data Streams
+    Refresh Data Stream        Reservation_
+    Refresh Data Stream        Guest_
 
-    #Refresh Guest Data Stream
+Create Data Stream
+    Appstate                   Data Cloud Setup
+    LaunchApp                  Data Cloud
     ClickText                  Data Streams
-    ClickText                  Select a List View: Data Streams
-    ClickText                  All Data Streams
-    ClickText                  Guest_
-    ClickText                  Refresh Now
-    UseModal                   on                          //div[contains(@class, 'slds-modal__container')]
-    ClickText                  Refresh Only New Files
-    ClickElement               //button[contains(@class, 'slds-button_brand') and contains(., 'Refresh Now')]
-    UseModal                   off
-
+    ClickText                  New
+    UseModal                   on
+    ClickText                  Salesforce CRM
+    ClickText                  Next
+    ClickText                  Salesforce_Contacts
+    ClickText                  Next
+    ClickText                  Next
+    ClickText                  Deploy
+    #Refresh Contacts Data Stream
+    Refresh Data Stream        Contact_Home

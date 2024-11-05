@@ -1,53 +1,64 @@
 *** Settings ***
-Library                         QWeb
-Resource                        ../resources/common.robot
-Suite Setup                     Setup Browser
-Suite Teardown                  End suite
-Library                         FakerLibrary
+Library                        QWeb
+Resource                       ../resources/common.robot
+Suite Setup                    Setup Browser
+Suite Teardown                 End suite
+Library                        FakerLibrary
 
 
 *** Test Cases ***
 
 
 Establish and verify AWS connection
-    Appstate                    Data Cloud Setup
-    ClickText                   Other Connectors
+    Appstate                   Data Cloud Setup
+    ClickText                  Other Connectors
 
     #Verify Connection Record exists
-    VerifyText                  Coral Cloud S3 Connection
+    VerifyText                 Coral Cloud S3 Connection
 
     #Check if Connection is Inactive
-    ${connection_inactive}=     Is Text                     Inactive
-    IF                          ${connection_inactive}
-        ClickText               Show actions
-        ClickText               Activate
-        TypeSecret              AWS access key              ${AWS_access_key}
-        TypeSecret              AWS secret access key       ${AWS_secret_access_key}
-        ClickText               Test Connection
-        VerifyText              Connection was established
-        ClickText               Save
+    ${connection_inactive}=    Is Text                     Inactive
+    IF                         ${connection_inactive}
+        ClickText              Show actions
+        ClickText              Activate
+        TypeSecret             AWS access key              ${AWS_access_key}
+        TypeSecret             AWS secret access key       ${AWS_secret_access_key}
+        ClickText              Test Connection
+        VerifyText             Connection was established
+        ClickText              Save
     ELSE
-        VerifyText              Active
+        VerifyText             Active
     END
 
 
-Enable Agents
+Refresh Data Streams
     #Enable Einstein
-    Appstate                    Salesforce Setup
-    TypeText                    Quick Find                  einstein setup
-    ClickText                   Einstein Setup
-    ${einstein_is_not_enabled}=                             Is Text                     Off
-    Run Keyword If              ${einstein_is_not_enabled}                              ClickCheckbox            Turn on EinsteinOnOff    on
-    VerifyText                  On
+    Appstate                   Data Cloud Setup
+    LaunchApp                  Data Cloud
 
-    #Enable Copilot
-    TypeText                    Quick Find                  Agents
-    ClickText                   Agents
-    ${copilot_is_not_enabled}=                              Is Text                     Off
-    Run Keyword If              ${copilot_is_not_enabled}                               ClickCheckbox            Basic optionOnOff    on
-    VerifyText                  On
+    #Refresh Reservation Data Stream
+    ClickText                  Data Streams
+    ClickText                  Select a List View: Data Streams
+    ClickText                  All Data Streams
+    ClickText                  Reservation_
+    ClickText                  Refresh Now
+    UseModal                   on
+    ClickText                  Refresh Only New Files    partial_match=on
+    Sleep                      5
+    ClickText                  Refresh Now                 anchor=Cancel
+    UseModal                   off
 
-    #Verify Einstein for Sales is on
-    TypeText                    Quick Find                  Einstein for Sales
-    ClickText                   Einstein for Sales
-    VerifyText                  Enabled                     anchor=follow-up notes.
+    #Refresh Guest Data Stream
+    ClickText                  Data Streams
+    ClickText                  Select a List View: Data Streams
+    ClickText                  All Data Streams
+    #TypeText                  Search this list...         Guest\n
+    #ClickText                 Show Actions
+    #ClickText                 Refresh Now
+    #ClickText                 Refresh Now                 anchor=Cancel
+    #ClickText                 Guest_
+    #ClickText                 Refresh Now
+    #ClickText                 Refresh Only New Files
+    #ClickText                 Refresh Now                 anchor=Cancel
+
+

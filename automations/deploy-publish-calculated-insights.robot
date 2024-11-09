@@ -20,6 +20,7 @@ Deploy and Publish Calculated Insight
     ClickText       Create from a Data Kit
     ClickText       Next
     ClickText       Spend Profile By Guest
+    Sleep           20
     ClickText       Next
     # Sleep           30
     VerifyNoText    New Insight

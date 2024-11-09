@@ -15,18 +15,22 @@ Deploy and Publish Calculated Insight
     ClickText       More
     ClickText       Calculated Insights
     ClickText       New
+    # Sleep           20
     UseModal        on
     ClickText       Create from a Data Kit
     ClickText       Next
     ClickText       Spend Profile By Guest
     ClickText       Next
+    # Sleep           30
     VerifyNoText    New Insight
     UseModal        off
     SwitchWindow    NEW
-    ClickText       Save                        parent=LIGHTNING-BUTTON
+    ClickText       Save and Run
+    UseModal        on
     ClickText       Next
     ClickText       Enable
-    Sleep           10
+    UseModal        off 
+    # Sleep           10
     RefreshPage
     ClickText       Show 5 more actions
     ClickText       Publish Now

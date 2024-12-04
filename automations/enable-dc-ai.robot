@@ -19,15 +19,14 @@ Enable Agents
     Appstate                    Salesforce Setup
     TypeText                    Quick Find                  einstein setup
     ClickText                   Einstein Setup
-    ${einstein_is_not_enabled}=                             Is Text                    Off
-    Run Keyword If              ${einstein_is_not_enabled}                             ClickCheckbox            Turn on EinsteinOnOff    on
+    ClickCheckbox               Turn on EinsteinOnOff       on
     VerifyText                  On
 
     #Enable Copilot
     TypeText                    Quick Find                  Agents
     ClickText                   Agents
     ${copilot_is_not_enabled}=                              Is Text                    Off
-    Run Keyword If              ${copilot_is_not_enabled}                              ClickCheckbox            Basic optionOnOff    on
+    Run Keyword If              ${copilot_is_not_enabled}                              ClickCheckbox        Basic optionOnOff    on
     VerifyText                  On
 
     #Verify Einstein for Sales is on

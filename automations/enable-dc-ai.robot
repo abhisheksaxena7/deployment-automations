@@ -19,6 +19,7 @@ Enable Agents
     Appstate                    Salesforce Setup
     TypeText                    Quick Find                  einstein setup
     ClickText                   Einstein Setup
+    Sleep                       10
     ${einstein_is_not_enabled}=                             Is Text                    Off
     Run Keyword If              ${einstein_is_not_enabled}                             ClickCheckbox            Turn on EinsteinOnOff    on
     VerifyText                  On

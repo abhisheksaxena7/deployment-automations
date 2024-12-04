@@ -24,6 +24,7 @@ Deploy and Publish Calculated Insight
     VerifyNoText    New Insight
     UseModal        off
     SwitchWindow    NEW
+    Sleep           15
     ClickText       Save and Run
     UseModal        on
     ClickText       Next

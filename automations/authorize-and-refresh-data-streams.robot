@@ -47,9 +47,13 @@ Create Data Stream
     UseModal                   on
     ClickText                  Salesforce CRM
     ClickText                  Next
+    Sleep                      10
     ClickText                  Salesforce_Contacts
+    Sleep                      10
     ClickText                  Next
+    Sleep                      10
     ClickText                  Next
+    Sleep                      10
     ClickText                  Deploy
     Sleep                      30
     VerifyNoText               New Data Stream
